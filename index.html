@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/industry-6996e1fa-b46b-4d9e-81d2-c0da6f37a8de/styles.css">
+<script src="_ds/industry-6996e1fa-b46b-4d9e-81d2-c0da6f37a8de/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap">
+<template id="__bundler_thumbnail" data-bg-color="#eceff2">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#eceff2"></rect><g stroke="#2f6b7d" stroke-width="2.5" fill="none"><path d="M60 140V80l40-24 40 24v60"></path><path d="M60 140h80"></path><path d="M84 116h32M84 98h32"></path></g><text x="100" y="176" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#2f6b7d">A.I.</text></svg>
+</template>
+<style>
+  :root{
+    --font-heading:"Barlow Condensed","IBM Plex Sans Thai",system-ui,sans-serif;
+    --font-body:"Barlow","IBM Plex Sans Thai",system-ui,sans-serif;
+  }
+  html{scroll-behavior:smooth}
+  body{margin:0;-webkit-font-smoothing:antialiased}
+  a{color:var(--color-accent-700);text-decoration:none}
+  a:hover{color:var(--color-accent-900);text-decoration:underline}
+  [data-lang="en"] .th{display:none !important}
+  [data-lang="th"] .en{display:none !important}
+  [data-lang="th"] [data-lang-btn="th"],[data-lang="en"] [data-lang-btn="en"]{background:var(--color-accent);color:var(--color-bg)}
+  [data-metrics="off"] [data-block="metrics"]{display:none !important}
+  [data-origin="off"] [data-block="origin"]{display:none !important}
+  .duotone::after{transition:opacity .4s ease}
+  .duotone:hover::after,a:hover .duotone::after{opacity:0}
+  .duotone img{transition:transform .5s ease}
+  .duotone:hover img,a:hover .duotone img{transform:scale(1.02)}
+  section[id]{scroll-margin-top:80px}
+  header .seg{flex:none}
+  header .seg button{white-space:nowrap}
+  @media (min-width:921px){
+    [data-lang="en"] section h1{font-size:56px !important;white-space:nowrap}
+  }
+  @media (max-width:1080px){
+    header nav{gap:14px !important}
+    [data-g="four"],[data-g="units"]{grid-template-columns:repeat(2,1fr) !important}
+    [data-g="units"] > div{border-left:0 !important;padding-left:0 !important;padding-right:24px !important;border-top:1px solid var(--color-divider)}
+  }
+  @media (max-width:920px){
+    [data-lead]{width:calc((100% - 26px)/2) !important}
+    header > div{flex-wrap:wrap !important;row-gap:10px}
+    header nav{width:100%;margin-left:0 !important;flex-wrap:wrap;justify-content:flex-start}
+    [data-g="hero"],[data-g="two"]{grid-template-columns:1fr !important;gap:34px !important}
+    [data-g="three"],[data-g="metrics"]{grid-template-columns:repeat(2,1fr) !important;row-gap:30px !important}
+    [data-g="metrics"] > div{padding-left:0 !important;padding-right:24px !important;border-left:0 !important}
+    section h1{font-size:52px !important}
+  }
+  @media (max-width:680px){
+    [data-g="collab"]{grid-template-columns:1fr !important;gap:10px !important}
+    [data-lead]{width:100% !important}
+    section[id],#contact,header > div,footer > div,section > div[style*="1180px"]{padding-left:20px !important;padding-right:20px !important}
+    [data-g="four"],[data-g="units"],[data-g="three"],[data-g="metrics"]{grid-template-columns:1fr !important}
+    [data-g="metrics"] > div > div:first-child{font-size:42px !important}
+    section h1{font-size:38px !important}
+    section h2{font-size:28px !important}
+    #cycles ol li{display:block !important}
+    #cycles ol li > span:first-child{display:none !important}
+    #cycles ol li .tag{margin-top:8px}
+    .blueprint{padding:22px !important}
+    #contact > .blueprint{padding:26px !important}
+  }
+  @keyframes ai-spin{to{transform:rotate(360deg)}}
+  @keyframes ai-pulse{0%,100%{opacity:.2}50%{opacity:1}}
+  @keyframes ai-draw{to{stroke-dashoffset:0}}
+  @keyframes ai-scan{0%,100%{transform:translateY(-4.5px)}50%{transform:translateY(4.5px)}}
+  @keyframes ai-rise{0%,100%{transform:translateY(1.5px)}50%{transform:translateY(-1.5px)}}
+  @keyframes ai-dash{to{stroke-dashoffset:-24}}
+  @keyframes ai-fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){*{animation:none !important}}
+</style>
+</helmet>
+
+<div data-lang="th" data-metrics="on" data-origin="on" ref="{{ rootRef }}" style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);min-height:100vh;overflow-x:hidden">
+
+  <a id="top" style="display:block;position:absolute;top:0"></a>
+  <header style="position:sticky;top:0;z-index:30;background:color-mix(in srgb, var(--color-bg) 90%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--color-divider)">
+    <div style="max-width:1180px;margin:0 auto;padding:9px 32px;display:flex;align-items:center;gap:24px">
+      <a href="https://www.arch.arch.chula.ac.th/aicuarchlab" style="display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit">
+        <img src="assets/ai-logo-700.webp" alt="Architectural Intelligence (A.I.) Research Group" style="width:40px;height:40px;border-radius:50%">
+        <span style="font-family:var(--font-heading);font-size:19px;font-weight:600;line-height:1.1;letter-spacing:-.01em">A.I. Research Group<br><span style="font-size:10px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700)">Faculty of Architecture · Chulalongkorn</span></span>
+      </a>
+      <nav style="margin-left:auto;display:flex;align-items:center;gap:20px">
+        <a href="#overview" style="font-family:var(--font-heading);font-size:16px;color:var(--color-text)"><span class="th">เกี่ยวกับกลุ่ม</span><span class="en">Overview</span></a>
+        <a href="#research" style="font-family:var(--font-heading);font-size:16px;color:var(--color-text)"><span class="th">งานวิจัย</span><span class="en">Research</span></a>
+        <a href="#cycles" style="font-family:var(--font-heading);font-size:16px;color:var(--color-text)"><span class="th">ผลงานตีพิมพ์</span><span class="en">Publications</span></a>
+        <a href="#members" style="font-family:var(--font-heading);font-size:16px;color:var(--color-text)"><span class="th">สมาชิก</span><span class="en">Members</span></a>
+        <a href="#news" style="font-family:var(--font-heading);font-size:16px;color:var(--color-text)"><span class="th">ข่าวและกิจกรรม</span><span class="en">News</span></a>
+        <a href="#contact" style="font-family:var(--font-heading);font-size:16px;color:var(--color-text)"><span class="th">ติดต่อ</span><span class="en">Contact</span></a>
+        <div class="seg" style="margin-left:6px">
+          <button type="button" data-lang-btn="th" onClick="{{ setTh }}" style="font-family:var(--font-heading);font-size:13px;letter-spacing:.06em;background:transparent;border:0;border-right:1px solid var(--color-divider);color:var(--color-text);cursor:pointer;padding:7px 12px">TH</button>
+          <button type="button" data-lang-btn="en" onClick="{{ setEn }}" style="font-family:var(--font-heading);font-size:13px;letter-spacing:.06em;background:transparent;border:0;color:var(--color-text);cursor:pointer;padding:7px 12px">EN</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section style="position:relative;border-bottom:1px solid var(--color-divider);background-image:linear-gradient(var(--color-divider) 1px,transparent 1px),linear-gradient(90deg,var(--color-divider) 1px,transparent 1px);background-size:68px 68px;background-position:center">
+    <div data-g="hero" style="max-width:1180px;margin:0 auto;padding:84px 32px 72px;display:grid;grid-template-columns:1.35fr .85fr;gap:56px;align-items:center">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:22px;flex-wrap:wrap">
+          <span class="tag tag-outline" style="font-family:var(--font-heading);letter-spacing:.09em;text-transform:uppercase">STAR · Entry-level Research Group</span>
+          <span class="tag tag-accent" style="font-family:var(--font-heading);letter-spacing:.09em;text-transform:uppercase"><span class="th">รอบที่ 3 · อยู่ระหว่างพิจารณา</span><span class="en">Cycle 3 · under review</span></span>
+        </div>
+        <h1 style="font-size:66px;line-height:.96;letter-spacing:-.02em;margin:0 0 18px;max-width:none">
+          <span class="th">กลุ่มวิจัย<br>อัจฉริยสถาปัตย์</span><span class="en">Architectural Intelligence</span>
+        </h1>
+        <p style="font-size:19px;line-height:1.5;max-width:56ch;margin:0 0 12px;color:var(--color-neutral-800)">
+          <span class="th">กลุ่มวิจัยอัจฉริยสถาปัตย์ศึกษาว่าปัญญาประดิษฐ์จะเปลี่ยนการออกแบบ การปฏิบัติวิชาชีพ และการศึกษาสถาปัตยกรรมได้อย่างไร งานของเราครอบคลุมการสร้างรูปทรงด้วย AI การก่อสร้างที่ยั่งยืน และการทำงานอัตโนมัติ โดยให้ความสำคัญเป็นพิเศษกับสถาปัตยกรรมไทยและมรดกทางวัฒนธรรม</span>
+          <span class="en">The Architectural Intelligence (A.I.) Research Group explores how artificial intelligence can transform architectural design, practice, and education. Our work spans AI-driven form generation, sustainable construction, and workflow automation, with a special focus on Thai architecture and cultural heritage.</span>
+        </p>
+        <p style="font-size:19px;line-height:1.5;max-width:56ch;margin:0 0 30px;color:var(--color-neutral-800)">
+          <span class="th">ผ่านความร่วมมือข้ามศาสตร์ เราพัฒนาเครื่องมือและวิธีการที่ส่งเสริมความคิดสร้างสรรค์ รักษาขนบธรรมเนียม และเตรียมสถาปนิกรุ่นใหม่สู่ยุคการออกแบบที่ขับเคลื่อนด้วย AI</span>
+          <span class="en">Through interdisciplinary collaboration, we develop tools and methods that enhance creativity, preserve tradition, and prepare future architects for the AI-empowered design era.</span>
+        </p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="#cycles" class="btn btn-primary" style="padding:11px 20px;font-size:15px"><span class="th">ดูผลงานตีพิมพ์</span><span class="en">See publications</span></a>
+          <a href="#members" class="btn btn-secondary" style="padding:11px 20px;font-size:15px"><span class="th">สมาชิกกลุ่ม</span><span class="en">Meet the members</span></a>
+        </div>
+      </div>
+      <figure class="blueprint" style="padding:34px;display:grid;place-items:center;background:var(--color-bg)">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <img src="assets/ai-logo-700.webp" alt="Architectural Intelligence (A.I.) Research Group logo" style="width:100%;max-width:280px;border-radius:50%;animation:ai-fade .8s ease-out both">
+      </figure>
+    </div>
+  </section>
+
+  <section id="overview" style="max-width:1180px;margin:0 auto;padding:76px 32px 0">
+    <div data-g="two" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start">
+      <div>
+        <h6 style="color:var(--color-accent-700);margin-bottom:14px"><span class="th">เกี่ยวกับกลุ่ม</span><span class="en">Overview</span></h6>
+        <h2 style="font-size:36px;max-width:22ch;margin-bottom:16px"><span class="th">สถาปัตยกรรม วิศวกรรม และปัญญาประดิษฐ์ บนโต๊ะเขียนแบบเดียวกัน</span><span class="en">Architecture, engineering and machine intelligence on one drawing board</span></h2>
+        <p style="font-size:16px;line-height:1.6;color:var(--color-neutral-800)">
+          <span class="th">กลุ่มวิจัยอัจฉริยสถาปัตย์เป็นกลุ่มวิจัยระดับเริ่มต้น (Entry Level) ภายใต้โครงการ Special Task Force for Activating Research (STAR) สนับสนุนโดยสำนักบริหารวิจัย จุฬาลงกรณ์มหาวิทยาลัย ปัจจุบันกลุ่มอยู่ในรอบการดำเนินงาน 6 เดือนสุดท้าย ซึ่งอยู่ระหว่างการพิจารณาอนุมัติ ก่อนเสนอขอยกระดับเป็นหน่วยปฏิบัติการวิจัย (Research Unit: RU)</span>
+          <span class="en">The group is an entry-level research lab under the Special Task Force for Activating Research (STAR) programme, funded by the Office of Research Affairs, Chulalongkorn University. It is now in its final six-month cycle — pending approval — before applying to be upgraded to a Research Unit (RU).</span>
+        </p>
+        <p style="font-size:16px;line-height:1.6;color:var(--color-neutral-800)">
+          <span class="th">สมาชิกของกลุ่มมาจากภาควิชาสถาปัตยกรรมศาสตร์ สถาปัตยกรรมไทย การออกแบบอุตสาหกรรม และวิศวกรรมโยธา ทำงานร่วมกันในโจทย์ที่ต้องอาศัยทั้งการตัดสินใจเชิงออกแบบและการคำนวณควบคู่กัน</span>
+          <span class="en">Members are drawn from Architecture, Thai Architecture, Industrial Design and Civil Engineering — a deliberately mixed table for problems that need design judgement and computation in equal measure.</span>
+        </p>
+      </div>
+      <div data-block="origin" class="blueprint" style="padding:30px;background:var(--color-bg)">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div style="display:flex;align-items:flex-start;gap:16px">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" style="flex:none;margin-top:5px;animation:ai-spin 24s linear infinite;transform-origin:50% 50%"><path d="M12 4v16M4.5 7.5l15 9M19.5 7.5l-15 9"></path></svg>
+          <div>
+            <h6 style="color:var(--color-accent-700);margin-bottom:12px"><span class="th">ที่มาของชื่อ</span><span class="en">How the name came about</span></h6>
+            <p style="font-family:var(--font-heading);font-size:23px;line-height:1.3;margin-bottom:12px">
+              <span class="th">ชื่อ <em style="font-style:normal;background:color-mix(in srgb,var(--color-accent) 24%,transparent);padding:0 4px">“Architectural Intelligence”</em> ตั้งโดย รศ.ดร.ทิพย์สุดา ปทุมานนท์</span>
+              <span class="en">The name <em style="font-style:normal;background:color-mix(in srgb,var(--color-accent) 24%,transparent);padding:0 4px">“Architectural Intelligence”</em> was given by Assoc. Prof. Dr. Thipsuda Pathummanon</span>
+            </p>
+            <p style="font-size:14px;line-height:1.65;color:var(--color-neutral-700);margin-bottom:16px">
+              <span class="th">อาจารย์ผู้เป็นที่เคารพและเกษียณอายุราชการจากภาควิชาสถาปัตยกรรมศาสตร์ คณะสถาปัตยกรรมศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย โดยเสนอชื่อนี้ในการประชุมเปิดตัวกลุ่มวิจัยรอบที่ 1 ชื่อดังกล่าวยึดโยงงานของกลุ่มไว้กับ “ปัญญา” ของสถาปัตยกรรมเอง มิใช่เพียงการนำเครื่องมือ AI มาใช้</span>
+              <span class="en">A renowned retired lecturer of the Department of Architecture, Faculty of Architecture, Chulalongkorn University. She proposed the name at the group's first-cycle kick-off meeting — anchoring the work in the intelligence of architecture itself, not in the tools alone.</span>
+            </p>
+            <figure class="blueprint" style="margin:0 0 14px;padding:10px;background:var(--color-bg)">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              <img src="assets/naming-note.webp" alt="บันทึกลายมือการตั้งชื่อกลุ่มวิจัยอัจฉริยสถาปัตย์ โดย รศ.ดร.ทิพย์สุดา ปทุมานนท์" loading="lazy" style="width:100%;display:block">
+              <figcaption style="font-size:12px;line-height:1.5;color:var(--color-neutral-600);margin-top:10px"><span class="th">บันทึกลายมือของ รศ.ดร.ทิพย์สุดา ปทุมานนท์ อธิบายที่มาของชื่อ “อัจฉริยสถาปัตย์ / Architectural Intelligence”</span><span class="en">The handwritten note by Assoc. Prof. Dr. Thipsuda Pathummanon explaining the name “อัจฉริยสถาปัตย์ / Architectural Intelligence”.</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:flex-end;padding:22px 0 0">
+      <a href="#top" style="display:inline-flex;align-items:center;gap:6px;font-family:var(--font-heading);font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--color-accent-700)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"></path></svg>
+        <span class="th">กลับขึ้นด้านบน</span><span class="en">Back to top</span>
+      </a>
+    </div>
+  </section>
+
+  <section data-block="metrics" style="margin-top:72px;background:var(--color-accent-900);color:var(--color-bg)">
+    <div data-g="metrics" style="max-width:1180px;margin:0 auto;padding:52px 32px;display:grid;grid-template-columns:repeat(4,1fr)">
+      <div style="padding-right:28px">
+        <div data-count="9" style="font-family:var(--font-heading);font-size:58px;line-height:1;letter-spacing:-.02em">9</div>
+        <div style="font-size:13px;line-height:1.45;margin-top:8px;color:var(--color-accent-300)"><span class="th">บทความวารสารระดับ T1<br>ในรอบที่ 1–2</span><span class="en">T1 journal articles<br>across cycles 1–2</span></div>
+      </div>
+      <div style="padding:0 28px;border-left:1px solid color-mix(in srgb,#f2f2f3 22%,transparent)">
+        <div data-count="315" style="font-family:var(--font-heading);font-size:58px;line-height:1;letter-spacing:-.02em">315</div>
+        <div style="font-size:13px;line-height:1.45;margin-top:8px;color:var(--color-accent-300)"><span class="th">การอ้างอิงผลงานของสมาชิก<br>(SciVal/Scopus, 2020–2025)</span><span class="en">citations to members' work<br>(SciVal/Scopus, 2020–2025)</span></div>
+      </div>
+      <div style="padding:0 28px;border-left:1px solid color-mix(in srgb,#f2f2f3 22%,transparent)">
+        <div style="font-family:var(--font-heading);font-size:58px;line-height:1;letter-spacing:-.02em"><span data-count="25.8">25.8</span>%</div>
+        <div style="font-size:13px;line-height:1.45;margin-top:8px;color:var(--color-accent-300)"><span class="th">ของผลงาน (8 เรื่อง) ตีพิมพ์ในวารสาร<br>Top 10% ตาม CiteScore</span><span class="en">of output (8 papers) in top-10%<br>CiteScore journals</span></div>
+      </div>
+      <div style="padding-left:28px;border-left:1px solid color-mix(in srgb,#f2f2f3 22%,transparent)">
+        <div data-count="7" style="font-family:var(--font-heading);font-size:58px;line-height:1;letter-spacing:-.02em">7</div>
+        <div style="font-size:13px;line-height:1.45;margin-top:8px;color:var(--color-accent-300)"><span class="th">อาจารย์และนักวิจัย จาก 2 คณะ<br>4 ภาควิชา</span><span class="en">faculty researchers across<br>2 faculties, 4 departments</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="research" style="max-width:1180px;margin:0 auto;padding:76px 32px 0">
+    <h6 style="color:var(--color-accent-700);margin-bottom:14px"><span class="th">ขอบเขตงานวิจัย</span><span class="en">Research themes</span></h6>
+    <h2 style="font-size:36px;margin-bottom:34px;max-width:26ch"><span class="th">สี่เส้นทางที่งานของกลุ่มเดินคู่กันไป</span><span class="en">Four lines of enquiry, worked in parallel</span></h2>
+    <div data-g="four" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
+      <div class="blueprint" style="padding:24px;display:flex;flex-direction:column;gap:14px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="5" r="2"></circle><circle cx="5" cy="17" r="2"></circle><circle cx="19" cy="17" r="2"></circle>
+          <path d="M10.5 6.7 6.4 15.2M13.5 6.7l4.1 8.5M7 17h10" style="animation:ai-pulse 3.2s ease-in-out infinite"></path>
+        </svg>
+        <h4 style="font-size:19px;margin:0"><span class="th">การสร้างรูปทรงและการหาค่าเหมาะที่สุด</span><span class="en">Form generation &amp; optimisation</span></h4>
+        <p style="font-size:14px;line-height:1.6;color:var(--color-neutral-700);margin:0"><span class="th">การเรียนรู้เชิงเสริมกำลังและกราฟ สำหรับหาค่าเหมาะที่สุดของโครงถักและโครงสร้างเปลือกบาง</span><span class="en">Reinforcement learning and graph representations for truss and shell structural optimisation.</span></p>
+      </div>
+      <div class="blueprint" style="padding:24px;display:flex;flex-direction:column;gap:14px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 17.5 12 21l9-3.5"></path><path d="M3 12.5 12 16l9-3.5" style="animation:ai-rise 3.6s ease-in-out infinite"></path><path d="M12 3 3 7.5 12 11l9-3.5L12 3Z" style="animation:ai-rise 3.6s ease-in-out .3s infinite"></path>
+        </svg>
+        <h4 style="font-size:19px;margin:0"><span class="th">การก่อสร้างคาร์บอนต่ำและความยั่งยืน</span><span class="en">Low-carbon &amp; sustainable construction</span></h4>
+        <p style="font-size:14px;line-height:1.6;color:var(--color-neutral-700);margin:0"><span class="th">การประเมินวัฏจักรชีวิต วัสดุไม้ และการออกแบบที่ลดคาร์บอนสะสมในอาคาร</span><span class="en">Life-cycle assessment, timber systems and the reduction of embodied carbon in buildings.</span></p>
+      </div>
+      <div class="blueprint" style="padding:24px;display:flex;flex-direction:column;gap:14px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3.5" y="3.5" width="17" height="17"></rect><path d="M3.5 9h17M9 3.5v17" opacity=".5"></path>
+          <path d="M3.5 12h17" style="animation:ai-scan 2.8s ease-in-out infinite"></path>
+        </svg>
+        <h4 style="font-size:19px;margin:0"><span class="th">BIM และการทำงานอัตโนมัติ</span><span class="en">BIM &amp; workflow automation</span></h4>
+        <p style="font-size:14px;line-height:1.6;color:var(--color-neutral-700);margin:0"><span class="th">การถอดปริมาณ การติดตามความก้าวหน้างานก่อสร้างด้วยภาพ และการหาค่าเหมาะที่สุดหลายวัตถุประสงค์บน BIM</span><span class="en">Quantity take-off, vision-based site progress tracking, and multi-objective optimisation on BIM models.</span></p>
+      </div>
+      <div class="blueprint" style="padding:24px;display:flex;flex-direction:column;gap:14px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2.5 13.6 8 12 9.6 10.4 8 12 2.5Z"></path><path d="M9.5 21.5h5M10 21.5c0-4.5-1.5-6.5-1.5-8.5a3.5 3.5 0 0 1 7 0c0 2-1.5 4-1.5 8.5" stroke-dasharray="52" stroke-dashoffset="52" style="animation:ai-draw 2.4s ease-out forwards"></path>
+        </svg>
+        <h4 style="font-size:19px;margin:0"><span class="th">สถาปัตยกรรมไทยและมรดกวัฒนธรรม</span><span class="en">Thai architecture &amp; heritage</span></h4>
+        <p style="font-size:14px;line-height:1.6;color:var(--color-neutral-700);margin:0"><span class="th">การจัดกลุ่มคลังภาพถ่ายเจดีย์และวัดไทยด้วย AI ร่วมกับการตีความของผู้เชี่ยวชาญ</span><span class="en">Expert-guided AI clustering of archival photography of Thai stupas and temples.</span></p>
+      </div>
+    </div>
+
+    <h6 style="color:var(--color-accent-700);margin:56px 0 18px"><span class="th">หน่วยงานย่อยในรอบปัจจุบัน</span><span class="en">Sub-units in the current cycle</span></h6>
+    <div data-g="units" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)">
+      <div style="padding:22px 24px 22px 0">
+        <div style="font-family:var(--font-heading);font-size:13px;letter-spacing:.12em;color:var(--color-accent)">01</div>
+        <p style="font-size:15px;line-height:1.5;margin:8px 0 0"><span class="th">ระบบเครือข่ายคำสำคัญจากคลังภาพถ่ายเจดีย์และวัดไทย</span><span class="en">Keyword-network system built from a photographic archive of Thai stupas and temples</span></p>
+      </div>
+      <div style="padding:22px 24px;border-left:1px solid var(--color-divider)">
+        <div style="font-family:var(--font-heading);font-size:13px;letter-spacing:.12em;color:var(--color-accent)">02</div>
+        <p style="font-size:15px;line-height:1.5;margin:8px 0 0"><span class="th">แบบจำลองภาษา-ภาพเฉพาะทางบนแบบจำลองฐาน สำหรับงานวิจัยด้านอาคาร</span><span class="en">Domain-specific vision-language model on a foundation model, for building research</span></p>
+      </div>
+      <div style="padding:22px 24px;border-left:1px solid var(--color-divider)">
+        <div style="font-family:var(--font-heading);font-size:13px;letter-spacing:.12em;color:var(--color-accent)">03</div>
+        <p style="font-size:15px;line-height:1.5;margin:8px 0 0"><span class="th">การสร้างแบบจำลอง AI สำหรับโจทย์ทางสถาปัตยกรรมและโครงสร้าง</span><span class="en">Construction of AI models for architectural and structural problems</span></p>
+      </div>
+      <div style="padding:22px 0 22px 24px;border-left:1px solid var(--color-divider)">
+        <div style="font-family:var(--font-heading);font-size:13px;letter-spacing:.12em;color:var(--color-accent)">04</div>
+        <p style="font-size:15px;line-height:1.5;margin:8px 0 0"><span class="th">การสังเคราะห์ข้อมูลและการทดสอบแบบจำลอง AI</span><span class="en">Data synthesis and testing of the AI models</span></p>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:flex-end;padding:22px 0 0">
+      <a href="#top" style="display:inline-flex;align-items:center;gap:6px;font-family:var(--font-heading);font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--color-accent-700)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"></path></svg>
+        <span class="th">กลับขึ้นด้านบน</span><span class="en">Back to top</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="cycles" style="max-width:1180px;margin:0 auto;padding:76px 32px 0">
+    <h6 style="color:var(--color-accent-700);margin-bottom:14px"><span class="th">รอบการดำเนินงาน</span><span class="en">Programme cycles</span></h6>
+    <h2 style="font-size:36px;margin-bottom:34px;max-width:28ch"><span class="th">สามรอบ จากกลุ่มวิจัยระดับเริ่มต้นสู่หน่วยปฏิบัติการวิจัย</span><span class="en">Three cycles, from entry-level group to Research Unit</span></h2>
+    <div data-g="three" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <div class="blueprint" style="padding:26px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px">
+          <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:.12em;color:var(--color-accent)">CYCLE 01</span>
+          <span class="tag tag-neutral"><span class="th">เสร็จสิ้น</span><span class="en">Complete</span></span>
+        </div>
+        <h4 style="font-size:22px;margin:0 0 4px">1 Apr 2024 — 30 Sep 2025</h4>
+        <p style="font-size:14px;color:var(--color-neutral-700);margin:0 0 14px"><span class="th">ตั้งกลุ่ม กำหนดหัวข้อร่วม และเริ่มผลิตผลงาน</span><span class="en">Forming the group, agreeing shared themes, first output.</span></p>
+        <div style="height:4px;background:var(--color-neutral-300)"><div style="height:100%;width:100%;background:var(--color-accent)"></div></div>
+        <div style="font-family:var(--font-heading);font-size:15px;margin-top:12px"><span class="th">ผลงานตีพิมพ์ 3 เรื่อง · T1 ทั้งหมด</span><span class="en">3 publications · all T1</span></div>
+      </div>
+      <div class="blueprint" style="padding:26px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px">
+          <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:.12em;color:var(--color-accent)">CYCLE 02</span>
+          <span class="tag tag-neutral"><span class="th">เสร็จสิ้น</span><span class="en">Complete</span></span>
+        </div>
+        <h4 style="font-size:22px;margin:0 0 4px">1 Oct 2025 — 30 Sep 2026</h4>
+        <p style="font-size:14px;color:var(--color-neutral-700);margin:0 0 14px"><span class="th">ขยายเครือข่ายนานาชาติ และเพิ่มปริมาณผลงาน T1</span><span class="en">International network widened; T1 output stepped up.</span></p>
+        <div style="height:4px;background:var(--color-neutral-300)"><div style="height:100%;width:100%;background:var(--color-accent)"></div></div>
+        <div style="font-family:var(--font-heading);font-size:15px;margin-top:12px"><span class="th">ผลงานตีพิมพ์ 6 เรื่อง · T1 ทั้งหมด</span><span class="en">6 publications · all T1</span></div>
+      </div>
+      <div class="blueprint" style="padding:26px;border-color:var(--color-accent)">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px">
+          <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:.12em;color:var(--color-accent)">CYCLE 03</span>
+          <span class="tag tag-accent"><span class="th">กำลังดำเนินการ</span><span class="en">Ongoing</span></span>
+        </div>
+        <h4 style="font-size:22px;margin:0 0 4px">1 Oct 2026 — 31 Mar 2027</h4>
+        <p style="font-size:14px;color:var(--color-neutral-700);margin:0 0 14px"><span class="th">รอบ 6 เดือนสุดท้าย เตรียมยกระดับเป็นหน่วยปฏิบัติการวิจัย (RU)</span><span class="en">The final six months, preparing the Research Unit (RU) application.</span></p>
+        <div style="height:4px;background:var(--color-neutral-300)"><div style="height:100%;width:17%;background:var(--color-accent);animation:ai-pulse 2.6s ease-in-out infinite"></div></div>
+        <div style="font-family:var(--font-heading);font-size:15px;margin-top:12px"><span class="th">เป้าหมาย: T1 3 เรื่อง · Q1 2 เรื่อง · Q2 1 เรื่อง <span style="color:var(--color-accent-700)">(Q2 ครบแล้ว 1/1)</span></span><span class="en">Target: 3 × T1 · 2 × Q1 · 1 × Q2 <span style="color:var(--color-accent-700)">(Q2 met, 1/1)</span></span></div>
+      </div>
+    </div>
+
+    <h3 style="font-size:26px;margin:52px 0 4px"><span class="th">รอบที่ 1 · 1 เมษายน 2567 – 30 กันยายน 2568</span><span class="en">Cycle 1 · 1 April 2024 – 30 September 2025</span></h3>
+    <p style="font-size:14px;color:var(--color-neutral-700);margin-bottom:18px"><span class="th">ผลงานตีพิมพ์ในวารสารวิชาการระดับนานาชาติ ที่มีชื่อกลุ่มวิจัยปรากฏ</span><span class="en">Peer-reviewed international journal articles carrying the group's name.</span></p>
+    <ol style="list-style:none;margin:0;padding:0;border-top:1px solid var(--color-divider)">
+      <li style="display:grid;grid-template-columns:44px 1fr 74px;gap:18px;padding:20px 0;border-bottom:1px solid var(--color-divider);align-items:start">
+        <span style="font-family:var(--font-heading);font-size:14px;letter-spacing:.1em;color:var(--color-neutral-500)">01</span>
+        <div>
+          <p style="font-size:16px;line-height:1.5;margin:0 0 5px"><strong>Nakapan, W., Kupwiwat, C.-t., &amp; Khosakitchalert, C.</strong> (2025). DeepTagPhoto: Expert-guided unsupervised clustering of Thai architectural photography using pre-trained CNN models. <em>Frontiers of Architectural Research</em>.</p>
+          <p style="font-size:14px;line-height:1.6;color:var(--color-neutral-700);margin:0 0 6px"><span class="th">จัดกลุ่มภาพถ่ายเจดีย์ 824 ภาพ ที่คัดจากคลังภาพวิชาการ 7,696 ภาพ ด้วยการเรียนรู้แบบไม่มีผู้สอน โดยเปรียบเทียบคุณลักษณะเชิงลึกจากโครงข่าย CNN ที่ฝึกไว้ล่วงหน้าสี่แบบ ผลการจัดกลุ่มถูกตรวจสอบโดยผู้เชี่ยวชาญ ซึ่งนำไปสู่การแก้ไขป้ายกำกับเดิมและเผยให้เห็นความคลาดเคลื่อนของการติดป้ายด้วยมือ</span><span class="en">Clusters 824 stupa photographs, drawn from a 7,696-image academic archive, without using existing labels — comparing deep features from four pre-trained CNNs. A domain expert validated the groupings, and the exercise led to revisions of earlier annotations, exposing label noise in manual tagging.</span></p>
+          <a href="https://doi.org/10.1016/j.foar.2025.09.012" target="_blank" rel="noopener" style="font-size:13px">doi.org/10.1016/j.foar.2025.09.012</a>
+        </div>
+        <span class="tag tag-outline" style="justify-self:end">Scopus T1</span>
+      </li>
+      <li style="display:grid;grid-template-columns:44px 1fr 74px;gap:18px;padding:20px 0;border-bottom:1px solid var(--color-divider);align-items:start">
+        <span style="font-family:var(--font-heading);font-size:14px;letter-spacing:.1em;color:var(--color-neutral-500)">02</span>
+        <div>
+          <p style="font-size:16px;line-height:1.5;margin:0 0 5px">Zain, M., <strong>Kupwiwat, C.-t.</strong>, Prasittisopin, L., <strong>Praphaphankul, N.</strong>, Kaewunruen, S., &amp; Zaidi, M. A. A. (2026). Framework for developing resistivity models to identify potential safety threats in embankment dams and assessing the use of bentonite in repairing deep cracks in the embankments. <em>Engineered Science, 39</em>, 2054.</p>
+          <p style="font-size:14px;line-height:1.6;color:var(--color-neutral-700);margin:0 0 6px"><span class="th">เสนอกรอบการทำงานที่ผสานการสำรวจภาคสนาม การสำรวจทางธรณีฟิสิกส์ และการทดสอบในห้องปฏิบัติการ เพื่อระบุจุดเสี่ยงด้านความปลอดภัยในเขื่อนดิน พร้อมประเมินการใช้เบนโทไนต์ในการซ่อมรอยแตกลึก</span><span class="en">Proposes a framework combining field inspection, geophysical survey and laboratory testing to locate safety threats in embankment dams, and assesses bentonite grouting as a repair for deep cracks.</span></p>
+          <a href="https://doi.org/10.30919/es2054" target="_blank" rel="noopener" style="font-size:13px">doi.org/10.30919/es2054</a>
+        </div>
+        <span class="tag tag-outline" style="justify-self:end">Scopus T1</span>
+      </li>
+      <li style="display:grid;grid-template-columns:44px 1fr 74px;gap:18px;padding:20px 0;border-bottom:1px solid var(--color-divider);align-items:start">
+        <span style="font-family:var(--font-heading);font-size:14px;letter-spacing:.1em;color:var(--color-neutral-500)">03</span>
+        <div>
+          <p style="font-size:16px;line-height:1.5;margin:0 0 5px">Seghier, T., <strong>Khosakitchalert, C.</strong>, Ohueri, C., Liu, Z., Ng, K., &amp; Bin Che Din, N. (2026). A BIM-based multi-objective optimization method for improving acoustic reverberation performance in educational spaces. <em>Technology|Architecture + Design</em>.</p>
+          <p style="font-size:14px;line-height:1.6;color:var(--color-neutral-700);margin:0 0 6px"><span class="th">ใช้แบบจำลองสารสนเทศอาคาร (BIM) ร่วมกับการหาค่าเหมาะที่สุดหลายวัตถุประสงค์ เพื่อปรับปรุงเวลาก้องสะท้อนในพื้นที่การเรียนการสอน โดยชั่งน้ำหนักระหว่างคุณภาพเสียงกับข้อจำกัดของวัสดุ</span><span class="en">Couples Building Information Modelling with multi-objective optimisation to improve reverberation time in educational spaces, weighing acoustic quality against material constraints.</span></p>
+          <a href="https://doi.org/10.1080/24751448.2025.2593015" target="_blank" rel="noopener" style="font-size:13px">doi.org/10.1080/24751448.2025.2593015 ↗</a>
+        </div>
+        <span class="tag tag-outline" style="justify-self:end">Scopus T1</span>
+      </li>
+    </ol>
+
+    <h3 style="font-size:26px;margin:48px 0 4px"><span class="th">รอบที่ 2 · 1 ตุลาคม 2568 – 30 กันยายน 2569</span><span class="en">Cycle 2 · 1 October 2025 – 30 September 2026</span></h3>
+    <p style="font-size:14px;color:var(--color-neutral-700);margin-bottom:18px"><span class="th">ผลงานตีพิมพ์ในวารสารวิชาการระดับนานาชาติ ที่มีชื่อกลุ่มวิจัยปรากฏ</span><span class="en">Peer-reviewed international journal articles carrying the group's name.</span></p>
+    <ol style="list-style:none;margin:0;padding:0;border-top:1px solid var(--color-divider)">
+      <li style="display:grid;grid-template-columns:44px 1fr 74px;gap:18px;padding:20px 0;border-bottom:1px solid var(--color-divider);align-items:start">
+        <span style="font-family:var(--font-heading);font-size:14px;letter-spacing:.1em;color:var(--color-neutral-500)">04</span>
+        <div>
+          <p style="font-size:16px;line-height:1.5;margin:0 0 5px"><strong>Kupwiwat, C.-t.</strong>, &amp; Ohsaki, M. (2026). A unified evaluation framework for reinforcement learning paradigms in bi-objective truss optimization. <em>Advanced Engineering Informatics, 74</em>, 104750.</p>
+          <p style="font-size:14px;line-height:1.6;color:var(--color-neutral-700);margin:0 0 6px"><span class="th">เปรียบเทียบการเรียนรู้เชิงเสริมกำลังแบบมาตรฐาน แบบหลายภารกิจ และแบบหลายตัวแทน บนการแทนโครงถักด้วยกราฟ โดยมีวัตถุประสงค์คู่คือลดปริมาตรโครงสร้างและลดการเบี่ยงเบนเชิงเรขาคณิต ผลชี้ว่าแบบหลายตัวแทนให้คำตอบพาเรโตที่หลากหลายและถ่ายโอนข้ามโจทย์ได้ดีที่สุด</span><span class="en">Compares standard, multi-task and multi-agent reinforcement learning on graph representations of trusses, minimising structural volume and geometric deviation together. Multi-agent learning yields the most diverse and transferable Pareto-optimal solutions.</span></p>
+          <a href="https://doi.org/10.1016/j.aei.2026.104750" target="_blank" rel="noopener" style="font-size:13px">doi.org/10.1016/j.aei.2026.104750</a>
+        </div>
+        <span class="tag tag-outline" style="justify-self:end">Scopus T1</span>
+      </li>
+      <li style="display:grid;grid-template-columns:44px 1fr 74px;gap:18px;padding:20px 0;border-bottom:1px solid var(--color-divider);align-items:start">
+        <span style="font-family:var(--font-heading);font-size:14px;letter-spacing:.1em;color:var(--color-neutral-500)">05</span>
+        <div>
+          <p style="font-size:16px;line-height:1.5;margin:0 0 5px"><strong>Kupwiwat, C.-t.</strong>, Hawasly, F., &amp; Prasittisopin, L. (2025). Integrating genetic algorithm and life cycle assessment for low-carbon optimization of timber lattice shell structures. <em>Structures, 82</em>, 110836.</p>
+          <p style="font-size:14px;line-height:1.6;color:var(--color-neutral-700);margin:0 0 6px"><span class="th">ผสานขั้นตอนวิธีเชิงพันธุกรรมเข้ากับการประเมินวัฏจักรชีวิต เพื่อหารูปทรงโครงสร้างเปลือกโครงข่ายไม้ที่ปล่อยคาร์บอนต่ำ โดยพิจารณาผลกระทบตลอดวัฏจักรชีวิตควบคู่กับสมรรถนะเชิงโครงสร้าง</span><span class="en">Pairs a genetic algorithm with life-cycle assessment to find low-carbon geometries for timber lattice shells, weighing whole-life impact alongside structural performance.</span></p>
+          <a href="https://doi.org/10.1016/j.istruc.2025.110836" target="_blank" rel="noopener" style="font-size:13px">doi.org/10.1016/j.istruc.2025.110836</a>
+        </div>
+        <span class="tag tag-outline" style="justify-self:end">Scopus T1</span>
+      </li>
+      <li style="display:grid;grid-template-columns:44px 1fr 74px;gap:18px;padding:20px 0;border-bottom:1px solid var(--color-divider);align-items:start">
+        <span style="font-family:var(--font-heading);font-size:14px;letter-spacing:.1em;color:var(--color-neutral-500)">06</span>
+        <div>
+          <p style="font-size:16px;line-height:1.5;margin:0 0 5px"><strong>Kupwiwat, C.-t.</strong>, Suriyaporn, P., Hawasly, F., &amp; Prasittisopin, L. (2026). Life-cycle-aware structural optimization of timber lattice shells using multi-task graph reinforcement learning. <em>Structures, 89</em>, 112134.</p>
+          <p style="font-size:14px;line-height:1.6;color:var(--color-neutral-700);margin:0 0 6px"><span class="th">ต่อยอดงานข้างต้นด้วยการเรียนรู้เชิงเสริมกำลังบนกราฟแบบหลายภารกิจ ทำให้แบบจำลองเดียวรับมือโจทย์เปลือกโครงข่ายไม้ได้หลายรูปแบบ พร้อมคำนึงถึงคาร์บอนตลอดวัฏจักรชีวิตตั้งแต่ขั้นออกแบบ</span><span class="en">Extends that work with multi-task graph reinforcement learning, so one trained model handles several timber lattice-shell problems while keeping life-cycle carbon in the objective from the outset.</span></p>
+          <a href="https://doi.org/10.1016/j.istruc.2026.112134" target="_blank" rel="noopener" style="font-size:13px">doi.org/10.1016/j.istruc.2026.112134</a>
+        </div>
+        <span class="tag tag-outline" style="justify-self:end">Scopus T1</span>
+      </li>
+      <li style="display:grid;grid-template-columns:44px 1fr 74px;gap:18px;padding:20px 0;border-bottom:1px solid var(--color-divider);align-items:start">
+        <span style="font-family:var(--font-heading);font-size:14px;letter-spacing:.1em;color:var(--color-neutral-500)">07</span>
+        <div>
+          <p style="font-size:16px;line-height:1.5;margin:0 0 5px">Saovana, N., &amp; <strong>Khosakitchalert, C.</strong> (2026). Automating dynamic scaffolding construction progress tracking using deep learning-based semantic image segmentation. <em>Nakhara: Journal of Environmental Design and Planning, 25</em>(2), Article 609.</p>
+          <p style="font-size:14px;line-height:1.6;color:var(--color-neutral-700);margin:0 0 6px"><span class="th">ใช้การแบ่งส่วนภาพเชิงความหมายด้วยการเรียนรู้เชิงลึก ติดตามความก้าวหน้าของการติดตั้งนั่งร้านที่เปลี่ยนแปลงตลอดเวลาในหน่วยงานก่อสร้าง แทนการตรวจนับด้วยสายตา</span><span class="en">Uses deep-learning semantic image segmentation to track the progress of scaffolding as it goes up and comes down on site, replacing manual visual inspection.</span></p>
+          <a href="https://doi.org/10.54028/NJ202625609" target="_blank" rel="noopener" style="font-size:13px">doi.org/10.54028/NJ202625609</a>
+        </div>
+        <span class="tag tag-outline" style="justify-self:end">Scopus T1</span>
+      </li>
+      <li style="display:grid;grid-template-columns:44px 1fr 74px;gap:18px;padding:20px 0;border-bottom:1px solid var(--color-divider);align-items:start">
+        <span style="font-family:var(--font-heading);font-size:14px;letter-spacing:.1em;color:var(--color-neutral-500)">08</span>
+        <div>
+          <p style="font-size:16px;line-height:1.5;margin:0 0 5px"><strong>Praphaphankul, N.</strong>, Prayoonwet, W., Tiprak, K., Akutsu, A., &amp; Sasaki, E. (2026). Accessible remote sensing of bridge movement monitoring with UAV-based SfM photogrammetry and unsupervised machine learning. <em>Structure and Infrastructure Engineering</em>, 1–26.</p>
+          <p style="font-size:14px;line-height:1.6;color:var(--color-neutral-700);margin:0 0 6px"><span class="th">เสนอวิธีตรวจวัดการเคลื่อนตัวของสะพานที่เข้าถึงได้ในต้นทุนต่ำ ด้วยภาพถ่ายจากอากาศยานไร้คนขับผ่านกระบวนการ SfM photogrammetry ร่วมกับการเรียนรู้ของเครื่องแบบไม่มีผู้สอน</span><span class="en">Presents a low-cost, accessible way to monitor bridge movement, combining UAV-based SfM photogrammetry with unsupervised machine learning.</span></p>
+          <a href="https://doi.org/10.1080/15732479.2026.2698097" target="_blank" rel="noopener" style="font-size:13px">doi.org/10.1080/15732479.2026.2698097</a>
+        </div>
+        <span class="tag tag-outline" style="justify-self:end">Scopus T1</span>
+      </li>
+      <li style="display:grid;grid-template-columns:44px 1fr 74px;gap:18px;padding:20px 0;border-bottom:1px solid var(--color-divider);align-items:start">
+        <span style="font-family:var(--font-heading);font-size:14px;letter-spacing:.1em;color:var(--color-neutral-500)">09</span>
+        <div>
+          <p style="font-size:16px;line-height:1.5;margin:0 0 5px"><strong>Praphaphankul, N.</strong>, Koohathong, P., Tiprak, K., Lenwari, A., &amp; Thongchom, C. (2026). Axial behavior of hollow concrete columns with GFRP and hybrid reinforcement: An integrated experimental and numerical study. <em>Structures, 91</em>, 112550.</p>
+          <p style="font-size:14px;line-height:1.6;color:var(--color-neutral-700);margin:0 0 6px"><span class="th">ศึกษาพฤติกรรมรับแรงตามแนวแกนของเสาคอนกรีตกลวงที่เสริมด้วย GFRP และการเสริมแบบผสม ด้วยการทดลองในห้องปฏิบัติการควบคู่กับการวิเคราะห์เชิงตัวเลข</span><span class="en">Studies the axial behaviour of hollow concrete columns reinforced with GFRP and hybrid reinforcement, through laboratory testing paired with numerical analysis.</span></p>
+          <a href="https://doi.org/10.1016/j.istruc.2026.112550" target="_blank" rel="noopener" style="font-size:13px">doi.org/10.1016/j.istruc.2026.112550</a>
+        </div>
+        <span class="tag tag-outline" style="justify-self:end">Scopus T1</span>
+      </li>
+    </ol>
+
+    <h3 style="font-size:26px;margin:48px 0 4px"><span class="th">รอบที่ 3 · 1 ตุลาคม 2569 – 31 มีนาคม 2570</span><span class="en">Cycle 3 · 1 October 2026 – 31 March 2027</span></h3>
+    <p style="font-size:14px;color:var(--color-neutral-700);margin-bottom:18px"><span class="th">ผลงานตีพิมพ์ที่เกิดขึ้นแล้วในรอบนี้ โดยระบุชื่อกลุ่มวิจัยในสังกัดผู้เขียน</span><span class="en">Publications already out in this cycle, carrying the group in the author affiliations.</span></p>
+    <ol style="list-style:none;margin:0 0 26px;padding:0;border-top:1px solid var(--color-divider)">
+      <li style="display:grid;grid-template-columns:44px 1fr 74px;gap:18px;padding:20px 0;border-bottom:1px solid var(--color-divider);align-items:start">
+        <span style="font-family:var(--font-heading);font-size:14px;letter-spacing:.1em;color:var(--color-neutral-500)">10</span>
+        <div>
+          <p style="font-size:16px;line-height:1.5;margin:0 0 5px">Arunotayanun, K., Papim, P., Muyjaroen, W., Unsiwilai, S., <strong>Kaewmoracharoen, M.</strong>, &amp; Jongvivatsakul, P. (2026). Explainable AI and ordered logistic regression for modeling passenger behavior in app-based ride-hailing services under systemic disruption. <em>Engineering Journal, 30</em>(6), 105.</p>
+          <p style="font-size:14px;line-height:1.6;color:var(--color-neutral-700);margin:0 0 6px"><span class="th">ใช้ปัญญาประดิษฐ์แบบอธิบายได้ (XAI) ควบคู่กับการถดถอยโลจิสติกแบบอันดับ เพื่อวิเคราะห์พฤติกรรมผู้โดยสารบริการเรียกรถผ่านแอปพลิเคชันในภาวะที่ระบบขนส่งถูกรบกวน</span><span class="en">Pairs explainable AI with ordered logistic regression to model how passengers of app-based ride-hailing services behave when the transport system is disrupted.</span></p>
+          <a href="https://doi.org/10.4186/ej.2026.30.6.105" target="_blank" rel="noopener" style="font-size:13px">doi.org/10.4186/ej.2026.30.6.105</a>
+          <span style="font-size:13px;color:var(--color-neutral-600);margin-left:10px"><span class="th">เผยแพร่ 24 สิงหาคม 2569</span><span class="en">Published 24 August 2026</span></span>
+        </div>
+        <span class="tag tag-outline" style="justify-self:end">Scopus Q2</span>
+      </li>
+    </ol>
+    <div class="blueprint" style="padding:26px 28px;margin-top:14px;display:flex;gap:20px;align-items:flex-start">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" style="flex:none;margin-top:2px"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.2 2" style="transform-origin:12px 12px;animation:ai-spin 8s linear infinite"></path></svg>
+      <p style="font-size:16px;line-height:1.6;margin:0;max-width:78ch">
+        <span class="th">รอบนี้กำลังดำเนินการและอยู่ระหว่างการพิจารณาอนุมัติ รายการด้านบนจะทยอยเพิ่มเมื่อบทความได้รับการตอบรับ เป้าหมายตามแผนคือ T1 จำนวน 3 เรื่อง Q1 จำนวน 2 เรื่อง และ Q2 จำนวน 1 เรื่อง พร้อมข้อเสนอขอทุนวิจัยจากแหล่งทุนภายในและภายนอกอย่างน้อยหนึ่งโครงการ</span>
+        <span class="en">This cycle is running and pending approval. The list above grows as further articles are accepted. The plan targets three T1, two Q1 and one Q2 article, together with at least one internal or external grant proposal submitted or funded.</span>
+      </p>
+    </div>
+    <div style="display:flex;justify-content:flex-end;padding:22px 0 0">
+      <a href="#top" style="display:inline-flex;align-items:center;gap:6px;font-family:var(--font-heading);font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--color-accent-700)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"></path></svg>
+        <span class="th">กลับขึ้นด้านบน</span><span class="en">Back to top</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="members" style="max-width:1180px;margin:0 auto;padding:76px 32px 0">
+    <h6 style="color:var(--color-accent-700);margin-bottom:14px"><span class="th">ทีมวิจัย</span><span class="en">Team</span></h6>
+    <h2 style="font-size:36px;margin-bottom:34px;max-width:26ch"><span class="th">สมาชิกทีมวิจัย</span><span class="en">Team members</span></h2>
+    <div data-g="three" style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px">
+      <div class="blueprint" style="padding:0;display:flex;flex-direction:column;border-color:var(--color-accent);grid-column:1/-1;justify-self:center;width:calc((100% - 52px)/3)" data-lead="1">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <a href="https://www.arch.chula.ac.th/arch-cu/TH/faculty/people_49.html" target="_blank" rel="noopener" style="display:block;text-decoration:none" title="Faculty profile"><div class="duotone" style="width:100%;aspect-ratio:1/1;border-bottom:1px solid var(--color-divider);overflow:hidden"><img src="assets/team-walaiporn.webp" alt="Asst. Prof. Dr. Walaiporn Nakapan" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block"></div></a>
+        <div style="padding:22px;display:flex;flex-direction:column;flex:1">
+          <div class="tag tag-accent" style="align-self:flex-start;margin-bottom:10px"><span class="th">หัวหน้ากลุ่มวิจัย</span><span class="en">Head of Lab</span></div>
+          <h4 style="font-size:20px;margin:0 0 2px"><span class="th">ผศ.ดร.วลัยภรณ์ นาคพันธุ์</span><span class="en">Asst. Prof. Dr. Walaiporn Nakapan</span></h4>
+          <p style="font-size:13px;line-height:1.5;color:var(--color-neutral-700);margin:0 0 12px;flex:1"><span class="th">ภาควิชาสถาปัตยกรรมศาสตร์ คณะสถาปัตยกรรมศาสตร์</span><span class="en">Department of Architecture, Faculty of Architecture</span></p>
+          <a href="https://www.arch.chula.ac.th/arch-cu/TH/faculty/people_49.html" target="_blank" rel="noopener" style="font-size:13px"><span class="th">ประวัติอาจารย์ ↗</span><span class="en">Faculty profile ↗</span></a>
+          <a href="https://orcid.org/0000-0002-9300-2915" target="_blank" rel="noopener" style="font-size:12px;display:inline-flex;align-items:center;gap:5px;margin-top:8px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"></circle><path d="M9 9v7M9 6.4v.1M13 16v-7h1.8a3.5 3.5 0 0 1 0 7Z" stroke-linecap="round"></path></svg>ORCID 0000-0002-9300-2915</a>
+        </div>
+      </div>
+      <div class="blueprint" style="padding:0;display:flex;flex-direction:column">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <a href="https://www.arch.chula.ac.th/arch-cu/TH/faculty/people_27.html" target="_blank" rel="noopener" style="display:block;text-decoration:none" title="Faculty profile"><div class="duotone" style="width:100%;aspect-ratio:1/1;border-bottom:1px solid var(--color-divider);overflow:hidden"><img src="assets/team-chavanont.webp" alt="Assoc. Prof. Dr. Chavanont Khosakitchalert" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block"></div></a>
+        <div style="padding:22px;display:flex;flex-direction:column;flex:1">
+          <h4 style="font-size:20px;margin:0 0 2px"><span class="th">รศ.ดร.ชวนนท์ โฆษกิจจาเลิศ</span><span class="en">Assoc. Prof. Dr. Chavanont Khosakitchalert</span></h4>
+          <p style="font-size:13px;line-height:1.5;color:var(--color-neutral-700);margin:0 0 12px;flex:1"><span class="th">ภาควิชาสถาปัตยกรรมศาสตร์ คณะสถาปัตยกรรมศาสตร์</span><span class="en">Department of Architecture, Faculty of Architecture</span></p>
+          <a href="https://www.arch.chula.ac.th/arch-cu/TH/faculty/people_27.html" target="_blank" rel="noopener" style="font-size:13px"><span class="th">ประวัติอาจารย์ ↗</span><span class="en">Faculty profile ↗</span></a>
+          <a href="https://orcid.org/0000-0002-1115-7009" target="_blank" rel="noopener" style="font-size:12px;display:inline-flex;align-items:center;gap:5px;margin-top:8px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"></circle><path d="M9 9v7M9 6.4v.1M13 16v-7h1.8a3.5 3.5 0 0 1 0 7Z" stroke-linecap="round"></path></svg>ORCID 0000-0002-1115-7009</a>
+        </div>
+      </div>
+      <div class="blueprint" style="padding:0;display:flex;flex-direction:column">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <a href="https://www.arch.chula.ac.th/arch-cu/TH/faculty/chitathon_kupwiwat.html" target="_blank" rel="noopener" style="display:block;text-decoration:none" title="Faculty profile"><div class="duotone" style="width:100%;aspect-ratio:1/1;border-bottom:1px solid var(--color-divider);overflow:hidden"><img src="assets/team-chitathon.webp" alt="Asst. Prof. Dr. Chi-tathon Kupwiwat" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block"></div></a>
+        <div style="padding:22px;display:flex;flex-direction:column;flex:1">
+          <h4 style="font-size:20px;margin:0 0 2px"><span class="th">ผศ.ดร.ชิตาทร คุปต์วิวัฒน์</span><span class="en">Asst. Prof. Dr. Chi-tathon Kupwiwat</span></h4>
+          <p style="font-size:13px;line-height:1.5;color:var(--color-neutral-700);margin:0 0 12px;flex:1"><span class="th">ภาควิชาสถาปัตยกรรมศาสตร์ คณะสถาปัตยกรรมศาสตร์</span><span class="en">Department of Architecture, Faculty of Architecture</span></p>
+          <a href="https://www.arch.chula.ac.th/arch-cu/TH/faculty/chitathon_kupwiwat.html" target="_blank" rel="noopener" style="font-size:13px"><span class="th">ประวัติอาจารย์ ↗</span><span class="en">Faculty profile ↗</span></a>
+          <a href="https://orcid.org/0000-0003-2355-9707" target="_blank" rel="noopener" style="font-size:12px;display:inline-flex;align-items:center;gap:5px;margin-top:8px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"></circle><path d="M9 9v7M9 6.4v.1M13 16v-7h1.8a3.5 3.5 0 0 1 0 7Z" stroke-linecap="round"></path></svg>ORCID 0000-0003-2355-9707</a>
+        </div>
+      </div>
+      <div class="blueprint" style="padding:0;display:flex;flex-direction:column">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <a href="https://www.eng.chula.ac.th/en/staff/asst-prof-manop-kaewmoracharoen-ph-d" target="_blank" rel="noopener" style="display:block;text-decoration:none" title="Faculty profile"><div class="duotone" style="width:100%;aspect-ratio:1/1;border-bottom:1px solid var(--color-divider);overflow:hidden"><img src="assets/team-manop.webp" alt="Asst. Prof. Dr. Manop Kaewmoracharoen" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block"></div></a>
+        <div style="padding:22px;display:flex;flex-direction:column;flex:1">
+          <h4 style="font-size:20px;margin:0 0 2px"><span class="th">ผศ.ดร.มานพ แก้วโมราเจริญ</span><span class="en">Asst. Prof. Dr. Manop Kaewmoracharoen</span></h4>
+          <p style="font-size:13px;line-height:1.5;color:var(--color-neutral-700);margin:0 0 12px;flex:1"><span class="th">ภาควิชาวิศวกรรมโยธา คณะวิศวกรรมศาสตร์</span><span class="en">Department of Civil Engineering, Faculty of Engineering</span></p>
+          <a href="https://www.eng.chula.ac.th/en/staff/asst-prof-manop-kaewmoracharoen-ph-d" target="_blank" rel="noopener" style="font-size:13px"><span class="th">ประวัติอาจารย์ ↗</span><span class="en">Faculty profile ↗</span></a>
+          <a href="https://orcid.org/0000-0002-9320-6301" target="_blank" rel="noopener" style="font-size:12px;display:inline-flex;align-items:center;gap:5px;margin-top:8px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"></circle><path d="M9 9v7M9 6.4v.1M13 16v-7h1.8a3.5 3.5 0 0 1 0 7Z" stroke-linecap="round"></path></svg>ORCID 0000-0002-9320-6301</a>
+        </div>
+      </div>
+      <div class="blueprint" style="padding:0;display:flex;flex-direction:column">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <a href="https://www.arch.chula.ac.th/arch-cu/TH/faculty/people_33.html" target="_blank" rel="noopener" style="display:block;text-decoration:none" title="Faculty profile"><div class="duotone" style="width:100%;aspect-ratio:1/1;border-bottom:1px solid var(--color-divider);overflow:hidden"><img src="assets/team-napat.webp" alt="Asst. Prof. Napat Kwanmuang" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block"></div></a>
+        <div style="padding:22px;display:flex;flex-direction:column;flex:1">
+          <h4 style="font-size:20px;margin:0 0 2px"><span class="th">ผศ.นภัส ขวัญเมือง</span><span class="en">Asst. Prof. Napat Kwanmuang</span></h4>
+          <p style="font-size:13px;line-height:1.5;color:var(--color-neutral-700);margin:0 0 12px;flex:1"><span class="th">ภาควิชาสถาปัตยกรรมศาสตร์ (สถาปัตยกรรมไทย) คณะสถาปัตยกรรมศาสตร์</span><span class="en">Department of Architecture (Thai Architecture), Faculty of Architecture</span></p>
+          <a href="https://www.arch.chula.ac.th/arch-cu/TH/faculty/people_33.html" target="_blank" rel="noopener" style="font-size:13px"><span class="th">ประวัติอาจารย์ ↗</span><span class="en">Faculty profile ↗</span></a>
+        </div>
+      </div>
+      <div class="blueprint" style="padding:0;display:flex;flex-direction:column">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <a href="https://www.arch.chula.ac.th/arch-cu/TH/faculty/thanathorn_kittikant.html" target="_blank" rel="noopener" style="display:block;text-decoration:none" title="Faculty profile"><div class="duotone" style="width:100%;aspect-ratio:1/1;border-bottom:1px solid var(--color-divider);overflow:hidden"><img src="assets/team-thanathorn.webp" alt="Assoc. Prof. Dr. Thanathorn Kittikant" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block"></div></a>
+        <div style="padding:22px;display:flex;flex-direction:column;flex:1">
+          <h4 style="font-size:20px;margin:0 0 2px"><span class="th">รศ.ดร.ธนธร กิตติกานต์</span><span class="en">Assoc. Prof. Dr. Thanathorn Kittikant</span></h4>
+          <p style="font-size:13px;line-height:1.5;color:var(--color-neutral-700);margin:0 0 12px;flex:1"><span class="th">ภาควิชาการออกแบบอุตสาหกรรม คณะสถาปัตยกรรมศาสตร์</span><span class="en">Department of Industrial Design, Faculty of Architecture</span></p>
+          <a href="https://www.arch.chula.ac.th/arch-cu/TH/faculty/thanathorn_kittikant.html" target="_blank" rel="noopener" style="font-size:13px"><span class="th">ประวัติอาจารย์ ↗</span><span class="en">Faculty profile ↗</span></a>
+        </div>
+      </div>
+      <div class="blueprint" style="padding:0;display:flex;flex-direction:column">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <a href="https://www.arch.chula.ac.th/arch-cu/TH/faculty/nitipong_praphaphankul.html" target="_blank" rel="noopener" style="display:block;text-decoration:none" title="Faculty profile"><div class="duotone" style="width:100%;aspect-ratio:1/1;border-bottom:1px solid var(--color-divider);overflow:hidden"><img src="assets/team-nitipong.webp" alt="Dr. Nitipong Praphaphankul" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block"></div></a>
+        <div style="padding:22px;display:flex;flex-direction:column;flex:1">
+          <h4 style="font-size:20px;margin:0 0 2px"><span class="th">ดร.นิติพงษ์ ประภาพันธ์กุล</span><span class="en">Dr. Nitipong Praphaphankul</span></h4>
+          <p style="font-size:13px;line-height:1.5;color:var(--color-neutral-700);margin:0 0 12px;flex:1"><span class="th">ภาควิชาสถาปัตยกรรมศาสตร์ (สถาปัตยกรรมไทย) คณะสถาปัตยกรรมศาสตร์</span><span class="en">Department of Architecture (Thai Architecture), Faculty of Architecture</span></p>
+          <a href="https://www.arch.chula.ac.th/arch-cu/TH/faculty/nitipong_praphaphankul.html" target="_blank" rel="noopener" style="font-size:13px"><span class="th">ประวัติอาจารย์ ↗</span><span class="en">Faculty profile ↗</span></a>
+          <a href="https://orcid.org/0000-0003-0301-2026" target="_blank" rel="noopener" style="font-size:12px;display:inline-flex;align-items:center;gap:5px;margin-top:8px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"></circle><path d="M9 9v7M9 6.4v.1M13 16v-7h1.8a3.5 3.5 0 0 1 0 7Z" stroke-linecap="round"></path></svg>ORCID 0000-0003-0301-2026</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:flex-end;padding:22px 0 0">
+      <a href="#top" style="display:inline-flex;align-items:center;gap:6px;font-family:var(--font-heading);font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--color-accent-700)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"></path></svg>
+        <span class="th">กลับขึ้นด้านบน</span><span class="en">Back to top</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="news" style="max-width:1180px;margin:0 auto;padding:76px 32px 0">
+    <h6 style="color:var(--color-accent-700);margin-bottom:14px"><span class="th">ข่าวและกิจกรรม</span><span class="en">News &amp; activities</span></h6>
+    <h2 style="font-size:36px;margin-bottom:34px;max-width:28ch"><span class="th">การยอมรับในระดับประเทศและระดับนานาชาติ</span><span class="en">National and international recognition</span></h2>
+    <div data-g="two" style="display:grid;grid-template-columns:1.55fr 1fr;gap:26px;align-items:start">
+      <div class="blueprint" style="padding:26px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div style="font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--color-accent);margin-bottom:8px"><span class="th">โรงเรียนฤดูร้อนระดับนานาชาติ</span><span class="en">International visiting school</span></div>
+        <h3 style="font-size:29px;margin:0 0 4px">AA-THU Visiting School Shenzhen 2026</h3>
+        <p style="font-family:var(--font-heading);font-size:19px;color:var(--color-accent-700);margin:0 0 14px">“Digital Engine, Super Making” · 数字引擎，超级智造</p>
+        <p style="font-size:15px;line-height:1.6;color:var(--color-neutral-800);margin:0 0 14px;max-width:66ch"><span class="th">ผศ.ดร.วลัยภรณ์ นาคพันธุ์ และ ดร.นิติพงษ์ ประภาพันธ์กุล ได้รับเชิญเป็น Design Tutor และวิทยากร โดย AA School (ลอนดอน) ร่วมกับ iFHHs, Tsinghua SIGS ภายในโรงเรียนได้ก่อสร้างศาลาไม้อัดขนาด 4.2 × 4.8 × 2.5 เมตร “Natural Forces, Super Folding” และบรรยายออนไลน์เรื่องการใช้ AI สำรวจคลังภาพถ่ายสถาปัตยกรรมไทย</span><span class="en">Asst. Prof. Dr. Walaiporn Nakapan and Dr. Nitipong Praphaphankul were invited as Design Tutors and speakers by the AA School (London) with iFHHs, Tsinghua SIGS. The school built a 4.2 × 4.8 × 2.5 m plywood pavilion, “Natural Forces, Super Folding”, alongside an online lecture on expert-guided AI for the Thai architectural photographic archive.</span></p>
+        <div style="display:flex;gap:22px;flex-wrap:wrap;margin-bottom:16px;padding-top:14px;border-top:1px solid var(--color-divider)">
+          <div>
+            <div style="font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--color-neutral-600)"><span class="th">ออนไลน์</span><span class="en">Pre-school</span></div>
+            <div style="font-family:var(--font-heading);font-size:17px">27 Jun – 5 Jul 2026</div>
+          </div>
+          <div>
+            <div style="font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--color-neutral-600)"><span class="th">ภาคสนาม</span><span class="en">Onsite</span></div>
+            <div style="font-family:var(--font-heading);font-size:17px">10 – 20 Jul 2026 · Shenzhen</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a href="https://www.aaschool.ac.uk/school/programmes/visiting-school/digital-engines" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:13px;padding:8px 14px"><span class="th">หน้าโปรแกรม ↗</span><span class="en">Programme page ↗</span></a>
+          <a href="https://www.facebook.com/share/p/1DEPSD6QHP/" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:13px;padding:8px 14px"><span class="th">โพสต์ข่าว ↗</span><span class="en">News post ↗</span></a>
+        </div>
+      </div>
+      <div class="blueprint" style="padding:26px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <h6 style="color:var(--color-accent-700);margin-bottom:16px"><span class="th">ลำดับเหตุการณ์สำคัญ</span><span class="en">Milestones</span></h6>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0">
+          <li style="padding:14px 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:13px;letter-spacing:.1em;color:var(--color-accent)"><span class="th">เมษายน 2567</span><span class="en">April 2024</span></div>
+            <div style="font-size:15px;line-height:1.5;margin-top:3px"><span class="th">ประชุมเปิดตัวกลุ่มวิจัยรอบที่ 1 — ที่ประชุมรับชื่อ “Architectural Intelligence” ตามที่ รศ.ดร.ทิพย์สุดา ปทุมานนท์ เสนอ</span><span class="en">Cycle 1 kick-off meeting — the group adopts the name “Architectural Intelligence”, proposed by Assoc. Prof. Dr. Thipsuda Pathummanon.</span></div>
+          </li>
+          <li style="padding:14px 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:13px;letter-spacing:.1em;color:var(--color-accent)"><span class="th">พฤษภาคม 2569</span><span class="en">May 2026</span></div>
+            <div style="font-size:15px;line-height:1.5;margin-top:3px"><span class="th">ร่วมจัดแสดงผลงานของกลุ่มใน ARCH Expo คณะสถาปัตยกรรมศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย</span><span class="en">The group exhibits its work at ARCH Expo, Faculty of Architecture, Chulalongkorn University.</span></div>
+          </li>
+          <li style="padding:14px 0;border-bottom:1px solid var(--color-divider)">
+            <div style="font-family:var(--font-heading);font-size:13px;letter-spacing:.1em;color:var(--color-accent)"><span class="th">สิงหาคม 2569</span><span class="en">August 2026</span></div>
+            <div style="font-size:15px;line-height:1.5;margin-top:3px"><span class="th">ส่งรายงานผลการดำเนินงาน 12 เดือน ต่อสำนักบริหารวิจัย พร้อมผลงานตีพิมพ์ระดับ T1 จำนวน 6 เรื่อง</span><span class="en">Twelve-month progress report submitted to the Office of Research Affairs, with six T1 articles in the cycle.</span></div>
+          </li>
+          <li style="padding:14px 0">
+            <div style="font-family:var(--font-heading);font-size:13px;letter-spacing:.1em;color:var(--color-accent)"><span class="th">ตุลาคม 2569</span><span class="en">October 2026</span></div>
+            <div style="font-size:15px;line-height:1.5;margin-top:3px"><span class="th">เริ่มรอบที่ 3 — หกเดือนสุดท้าย เพื่อเตรียมเสนอขอยกระดับเป็นหน่วยปฏิบัติการวิจัย (RU)</span><span class="en">Cycle 3 opens — the final six months, preparing the Research Unit (RU) application.</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="blueprint" style="margin-top:26px;padding:30px">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <h3 style="font-size:27px;margin:0 0 4px"><span class="th">ความร่วมมือวิจัยกับมหาวิทยาลัยระดับโลก</span><span class="en">Research collaborations with world-ranked universities</span></h3>
+      <p style="font-size:15px;line-height:1.6;color:var(--color-neutral-700);margin:0 0 8px;max-width:70ch"><span class="th">ผลงานตีพิมพ์ของกลุ่มเกิดขึ้นร่วมกับผู้ร่วมวิจัยจากมหาวิทยาลัยที่อยู่ใน 100 อันดับแรกของ QS World University Rankings</span><span class="en">The group's publications are co-authored with researchers at universities inside the QS World University Rankings top 100.</span></p>
+      <ul style="list-style:none;margin:0;padding:0">
+        <li style="display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:start;padding:18px 0;border-bottom:1px solid var(--color-divider)" data-g="collab">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top:2px"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18" style="animation:ai-pulse 4s ease-in-out infinite"></path></svg>
+          <div>
+            <div style="font-family:var(--font-heading);font-size:21px;line-height:1.2">Kyoto University</div>
+            <div style="font-size:13px;color:var(--color-neutral-600);margin-bottom:6px"><span class="th">ญี่ปุ่น</span><span class="en">Japan</span></div>
+            <div style="font-size:14px;line-height:1.55;color:var(--color-neutral-800)"><span class="th">ร่วมวิจัยกับ ผศ.ดร.ชิตาทร คุปต์วิวัฒน์ — การเรียนรู้เชิงเสริมกำลังแบบหลายเอเจนต์บนกราฟ เพื่อออกแบบโครงถัก</span><span class="en">With Asst. Prof. Dr. Chi-tathon Kupwiwat — multi-agent graph reinforcement learning for truss design</span></div>
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S1474034626004428" target="_blank" rel="noopener" style="font-size:13px;display:inline-block;margin-top:6px"><span class="th">ดูบทความ ↗</span><span class="en">View the article ↗</span></a>
+          </div>
+          <span class="tag tag-outline" style="white-space:nowrap;letter-spacing:.06em">QS Top 100</span>
+        </li>
+        <li style="display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:start;padding:18px 0;border-bottom:1px solid var(--color-divider)" data-g="collab">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top:2px"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18" style="animation:ai-pulse 4s ease-in-out infinite"></path></svg>
+          <div>
+            <div style="font-family:var(--font-heading);font-size:21px;line-height:1.2">University of Birmingham</div>
+            <div style="font-size:13px;color:var(--color-neutral-600);margin-bottom:6px"><span class="th">สหราชอาณาจักร</span><span class="en">United Kingdom</span></div>
+            <div style="font-size:14px;line-height:1.55;color:var(--color-neutral-800)"><span class="th">ร่วมวิจัยกับ ผศ.ดร.ชิตาทร คุปต์วิวัฒน์ — การตรวจวัดและซ่อมแซมความปลอดภัยของเขื่อนดิน</span><span class="en">With Asst. Prof. Dr. Chi-tathon Kupwiwat — safety assessment and repair of embankment dams</span></div>
+            <a href="https://www.espublisher.com/journals/articledetails/2054/" target="_blank" rel="noopener" style="font-size:13px;display:inline-block;margin-top:6px"><span class="th">ดูบทความ ↗</span><span class="en">View the article ↗</span></a>
+          </div>
+          <span class="tag tag-outline" style="white-space:nowrap;letter-spacing:.06em">QS Top 100</span>
+        </li>
+        <li style="display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:start;padding:18px 0;border-bottom:1px solid var(--color-divider)" data-g="collab">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top:2px"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18" style="animation:ai-pulse 4s ease-in-out infinite"></path></svg>
+          <div>
+            <div style="font-family:var(--font-heading);font-size:21px;line-height:1.2">Institute of Science Tokyo</div>
+            <div style="font-size:13px;color:var(--color-neutral-600);margin-bottom:6px"><span class="th">ญี่ปุ่น</span><span class="en">Japan</span></div>
+            <div style="font-size:14px;line-height:1.55;color:var(--color-neutral-800)"><span class="th">ร่วมวิจัยกับ ดร.นิติพงษ์ ประภาพันธ์กุล — การตรวจวัดการเคลื่อนตัวของสะพานด้วยโดรนและการเรียนรู้ของเครื่อง</span><span class="en">With Dr. Nitipong Praphaphankul — UAV photogrammetry and machine learning for bridge monitoring</span></div>
+            <a href="https://doi.org/10.1080/15732479.2026.2698097" target="_blank" rel="noopener" style="font-size:13px;display:inline-block;margin-top:6px"><span class="th">ดูบทความ ↗</span><span class="en">View the article ↗</span></a>
+          </div>
+          <span class="tag tag-outline" style="white-space:nowrap;letter-spacing:.06em">QS Top 100</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="blueprint" style="margin-top:26px;padding:30px;display:grid;grid-template-columns:1.15fr 1fr;gap:32px;align-items:start" data-g="two">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <a href="https://www.youtube.com/live/iynRo_xUDEg" target="_blank" rel="noopener" title="Watch the lecture on YouTube" style="position:relative;display:block;width:100%;aspect-ratio:16/9;border:1px solid var(--color-divider);overflow:hidden;text-decoration:none">
+        <span class="duotone" style="position:absolute;inset:0;display:block"><img src="https://img.youtube.com/vi/iynRo_xUDEg/maxresdefault.jpg" alt="Public lecture by Prof. Neil Leach" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></span>
+        <span style="position:absolute;inset:0;display:grid;place-items:center;background:color-mix(in srgb, var(--color-accent-900) 22%, transparent)">
+          <span style="display:inline-flex;align-items:center;gap:9px;padding:11px 18px;background:var(--color-accent);color:var(--color-bg);font-family:var(--font-heading);font-size:16px;letter-spacing:.04em">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5 20 12 7 19.5z"></path></svg>
+            <span class="th">ดูวิดีโอบน YouTube</span><span class="en">Watch on YouTube</span>
+          </span>
+        </span>
+      </a>
+      <div>
+        <div style="font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--color-accent);margin-bottom:8px"><span class="th">การบรรยายสาธารณะ</span><span class="en">Public lecture</span></div>
+        <h3 style="font-size:27px;margin:0 0 6px">“Alien Intelligence: An Introduction to AI for Architects”</h3>
+        <p style="font-family:var(--font-heading);font-size:19px;color:var(--color-accent-700);margin:0 0 14px">Prof. Neil Leach · STAR AI Lecture Series</p>
+        <p style="font-size:15px;line-height:1.6;color:var(--color-neutral-800);margin:0 0 14px"><span class="th">กลุ่มวิจัยเป็นเจ้าภาพจัดการบรรยายสาธารณะโดย Prof. Neil Leach ศาสตราจารย์ประจำ Florida International University ผู้อำนวยการหลักสูตร Doctor of Design ผู้ร่วมก่อตั้ง DigitalFUTURES และผู้เขียน <em style="font-style:normal">Architecture in the Age of Artificial Intelligence</em> ชมย้อนหลังได้ที่คลิปด้านข้าง</span><span class="en">The group hosted a public lecture by Prof. Neil Leach — director of the Doctor of Design programme at Florida International University, co-founder of DigitalFUTURES, and author of <em style="font-style:normal">Architecture in the Age of Artificial Intelligence</em>. The recording is linked on the left.</span></p>
+        <div style="display:flex;gap:22px;flex-wrap:wrap;margin-bottom:18px;padding-top:14px;border-top:1px solid var(--color-divider)">
+          <div>
+            <div style="font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--color-neutral-600)"><span class="th">วันและเวลา</span><span class="en">Date</span></div>
+            <div style="font-family:var(--font-heading);font-size:17px">6 May 2025 · 16:30–18:00</div>
+          </div>
+          <div>
+            <div style="font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--color-neutral-600)"><span class="th">สถานที่</span><span class="en">Venue</span></div>
+            <div style="font-family:var(--font-heading);font-size:17px"><span class="th">ห้องประชุม หอสมุด ชั้น 4 คณะสถาปัตยกรรมศาสตร์</span><span class="en">Auditorium, Library 4th floor, Faculty of Architecture</span></div>
+          </div>
+        </div>
+        <a href="https://www.youtube.com/live/iynRo_xUDEg" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:13px;padding:8px 14px"><span class="th">ดูบน YouTube ↗</span><span class="en">Watch on YouTube ↗</span></a>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:18px">
+          <div style="position:relative;width:100%;aspect-ratio:4/3"><image-slot id="leach-1" shape="rect" placeholder="ภาพงานบรรยาย 1"></image-slot></div>
+          <div style="position:relative;width:100%;aspect-ratio:4/3"><image-slot id="leach-2" shape="rect" placeholder="ภาพงานบรรยาย 2"></image-slot></div>
+          <div style="position:relative;width:100%;aspect-ratio:4/3"><image-slot id="leach-3" shape="rect" placeholder="ภาพงานบรรยาย 3"></image-slot></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="blueprint" style="margin-top:26px;padding:30px;display:grid;grid-template-columns:1.15fr 1fr;gap:32px;align-items:start" data-g="two">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <a href="https://www.youtube.com/watch?v=T9bPimzxyDM" target="_blank" rel="noopener" title="Watch the lecture on YouTube" style="position:relative;display:block;width:100%;border:1px solid var(--color-divider);overflow:hidden;text-decoration:none">
+        <span class="duotone" style="display:block;position:relative"><img src="assets/lecture-delcampo.webp" alt="Poster: Current Development of AI in Architectural Practice, by Dr. Matias del Campo" loading="lazy" style="width:100%;display:block"></span>
+        <span style="position:absolute;inset:0;display:grid;place-items:center;background:color-mix(in srgb, var(--color-accent-900) 22%, transparent)">
+          <span style="display:inline-flex;align-items:center;gap:9px;padding:11px 18px;background:var(--color-accent);color:var(--color-bg);font-family:var(--font-heading);font-size:16px;letter-spacing:.04em">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5 20 12 7 19.5z"></path></svg>
+            <span class="th">ดูวิดีโอบน YouTube</span><span class="en">Watch on YouTube</span>
+          </span>
+        </span>
+      </a>
+      <div>
+        <div style="font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--color-accent);margin-bottom:8px"><span class="th">การบรรยายพิเศษ</span><span class="en">Special lecture</span></div>
+        <h3 style="font-size:27px;margin:0 0 6px">“Current Development of AI in Architectural Practice”</h3>
+        <p style="font-family:var(--font-heading);font-size:19px;color:var(--color-accent-700);margin:0 0 14px">Dr. Matias del Campo</p>
+        <p style="font-size:15px;line-height:1.6;color:var(--color-neutral-800);margin:0 0 14px">
+          <span class="th">การบรรยายพิเศษโดย Dr. Matias del Campo รองศาสตราจารย์ด้านสถาปัตยกรรม New York Institute of Technology ว่าด้วยพัฒนาการล่าสุดของการนำ AI มาใช้ในการปฏิบัติวิชาชีพสถาปัตยกรรม จัดภายในรายวิชา 2541643 Current Issues in International Practice หลักสูตรสถาปัตยกรรมศาสตรมหาบัณฑิต สาขาวิชาสถาปัตยกรรม (หลักสูตรนานาชาติ) I+MARCH</span>
+          <span class="en">A special lecture by Dr. Matias del Campo, Associate Professor in Architecture at the New York Institute of Technology, on where AI has actually reached in architectural practice. Hosted within 2541643 Current Issues in International Practice, Master of Architecture in Architectural Design (International Program), I+MARCH.</span>
+        </p>
+        <div style="display:flex;gap:22px;flex-wrap:wrap;margin-bottom:18px;padding-top:14px;border-top:1px solid var(--color-divider)">
+          <div>
+            <div style="font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--color-neutral-600)"><span class="th">วันและเวลา</span><span class="en">Date</span></div>
+            <div style="font-family:var(--font-heading);font-size:17px">8 Jan 2025 · 11:00–12:00</div>
+          </div>
+          <div>
+            <div style="font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--color-neutral-600)"><span class="th">สถานที่</span><span class="en">Venue</span></div>
+            <div style="font-family:var(--font-heading);font-size:17px"><span class="th">ห้องประชุม หอสมุด ชั้น 4 คณะสถาปัตยกรรมศาสตร์</span><span class="en">Auditorium, Library 4th floor, Faculty of Architecture</span></div>
+          </div>
+        </div>
+        <a href="https://www.youtube.com/watch?v=T9bPimzxyDM" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:13px;padding:8px 14px"><span class="th">ดูวิดีโอบน YouTube ↗</span><span class="en">Watch on YouTube ↗</span></a>
+      </div>
+    </div>
+
+    <div data-g="three" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:26px">
+      <div class="blueprint" style="padding:24px;display:flex;flex-direction:column;gap:12px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"></circle><path d="M8.5 13.5 7 21l5-2.4 5 2.4-1.5-7.5" style="animation:ai-rise 3.4s ease-in-out infinite"></path></svg>
+        <div style="font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--color-accent)"><span class="th">รางวัลระดับชาติ</span><span class="en">National award</span></div>
+        <h4 style="font-size:19px;margin:0"><span class="th">TorThai — จิ๊กซอว์เจดีย์ไทยพิมพ์ 3 มิติ</span><span class="en">TorThai — a 3D-printed Thai chedi puzzle</span></h4>
+        <p style="font-size:14px;line-height:1.6;color:var(--color-neutral-700);margin:0;flex:1"><span class="th">ผลงานของ ผศ.นภัส ขวัญเมือง ได้รับรางวัลนวัตกรรมแห่งชาติ นำการพิมพ์สามมิติมาใช้สื่อสารสถาปัตยกรรมไทย</span><span class="en">A puzzle by Asst. Prof. Napat Kwanmuang that won a National Innovation Award, using 3D printing to make Thai architectural form something you can take apart and rebuild.</span></p>
+        <a href="https://www.facebook.com/share/p/19VpdaDnpS/" target="_blank" rel="noopener" style="font-size:13px"><span class="th">อ่านข่าว ↗</span><span class="en">Read the post ↗</span></a>
+      </div>
+      <div class="blueprint" style="padding:24px;display:flex;flex-direction:column;gap:12px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h13v16H4z"></path><path d="M17 8h3v12H4"></path><path d="M7.5 8h6M7.5 11h6M7.5 14h4" style="animation:ai-pulse 3.6s ease-in-out infinite"></path></svg>
+        <div style="font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--color-accent)"><span class="th">บทความ</span><span class="en">Article</span></div>
+        <h4 style="font-size:19px;margin:0"><span class="th">บทความในนิตยสารศิลปวัฒนธรรม</span><span class="en">Article in Silapa Watthanatham magazine</span></h4>
+        <p style="font-size:14px;line-height:1.6;color:var(--color-neutral-700);margin:0;flex:1"><span class="th">รศ.ดร.ธนธร กิตติกานต์ เขียนเผยแพร่งานของเขาสู่ผู้อ่านวงกว้าง ผ่านนิตยสารศิลปวัฒนธรรม</span><span class="en">Assoc. Prof. Dr. Thanathorn Kittikant brought the group's line of work to a wider readership through Silapa Watthanatham magazine.</span></p>
+        <a href="https://www.facebook.com/share/p/1BkvkwZSuE/" target="_blank" rel="noopener" style="font-size:13px"><span class="th">อ่านข่าว ↗</span><span class="en">Read the post ↗</span></a>
+      </div>
+      <div class="blueprint" style="padding:24px;display:flex;flex-direction:column;gap:12px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 8.5 6 12l3.5 3.5M14.5 8.5 18 12l-3.5 3.5" style="animation:ai-pulse 2.6s ease-in-out infinite"></path><rect x="3" y="4" width="18" height="16"></rect></svg>
+        <div style="font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--color-accent)">Hackathon</div>
+        <h4 style="font-size:19px;margin:0">AI Together #2: Chula Hackathon for Growth</h4>
+        <p style="font-size:14px;line-height:1.6;color:var(--color-neutral-700);margin:0;flex:1"><span class="th">ดร.ชิตาทร คุปต์วิวัฒน์ เข้าร่วมการแข่งขัน AI Hackathon ของจุฬาลงกรณ์มหาวิทยาลัย นำมุมมองเชิงคำนวณด้านสถาปัตยกรรมเข้าสู่โจทย์ข้ามศาสตร์</span><span class="en">Dr. Chi-tathon Kupwiwat took part in the University's AI hackathon, carrying a computational-architecture perspective into a cross-disciplinary brief.</span></p>
+        <a href="https://www.facebook.com/share/p/1DMhKpBci1/" target="_blank" rel="noopener" style="font-size:13px"><span class="th">อ่านข่าว ↗</span><span class="en">Read the post ↗</span></a>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:flex-end;padding:22px 0 0">
+      <a href="#top" style="display:inline-flex;align-items:center;gap:6px;font-family:var(--font-heading);font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--color-accent-700)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"></path></svg>
+        <span class="th">กลับขึ้นด้านบน</span><span class="en">Back to top</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="contact" style="max-width:1180px;margin:76px auto 0;padding:0 32px">
+    <div data-g="two" class="blueprint" style="padding:44px;display:grid;grid-template-columns:1.2fr 1fr;gap:44px;align-items:center;background:var(--color-bg)">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <div>
+        <h6 style="color:var(--color-accent-700);margin-bottom:12px"><span class="th">ติดต่อ</span><span class="en">Contact</span></h6>
+        <h2 style="font-size:34px;margin-bottom:12px;max-width:20ch"><span class="th" style="white-space:nowrap">สนใจร่วมงานวิจัยกับกลุ่ม?</span><span class="en">Interested in working with us?</span></h2>
+        <p style="font-size:16px;line-height:1.6;color:var(--color-neutral-800);max-width:52ch;margin:0">
+          <span class="th">กลุ่มยินดีรับความร่วมมือทางวิชาการ ข้อเสนอโครงการร่วม และการติดต่อจากนิสิตบัณฑิตศึกษาที่สนใจหัวข้อด้าน AI กับสถาปัตยกรรม</span>
+          <span class="en">We welcome academic collaboration, joint proposals, and enquiries from graduate students working at the meeting point of AI and architecture.</span>
+        </p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <div>
+          <div style="font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--color-neutral-600);margin-bottom:3px"><span class="th">อีเมล</span><span class="en">Email</span></div>
+          <a href="mailto:walaiporn.n@chula.ac.th" style="font-family:var(--font-heading);font-size:23px">walaiporn.n@chula.ac.th</a>
+        </div>
+        <div>
+          <div style="font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--color-neutral-600);margin-bottom:3px"><span class="th">ที่อยู่</span><span class="en">Address</span></div>
+          <p style="font-size:15px;line-height:1.5;margin:0">
+            <span class="th">ภาควิชาสถาปัตยกรรมศาสตร์ คณะสถาปัตยกรรมศาสตร์<br>จุฬาลงกรณ์มหาวิทยาลัย<br>254 ถนนพญาไท ปทุมวัน กรุงเทพฯ 10330</span>
+            <span class="en">Department of Architecture, Faculty of Architecture<br>Chulalongkorn University<br>254 Phayathai Road, Pathumwan, Bangkok 10330</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:flex-end;padding:22px 0 0">
+      <a href="#top" style="display:inline-flex;align-items:center;gap:6px;font-family:var(--font-heading);font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--color-accent-700)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"></path></svg>
+        <span class="th">กลับขึ้นด้านบน</span><span class="en">Back to top</span>
+      </a>
+    </div>
+  </section>
+
+  <footer style="margin-top:72px;border-top:1px solid var(--color-divider)">
+    <div style="max-width:1180px;margin:0 auto;padding:34px 32px 46px;display:flex;gap:32px;align-items:center;flex-wrap:wrap">
+      <img src="assets/ai-logo-700.webp" alt="" style="width:52px;height:52px;border-radius:50%">
+      <div style="font-size:13px;line-height:1.6;color:var(--color-neutral-700);max-width:58ch">
+        <span class="th">กลุ่มวิจัยอัจฉริยสถาปัตย์ (Architectural Intelligence (A.I.) Research Group) คณะสถาปัตยกรรมศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย · กลุ่มวิจัยระดับเริ่มต้นภายใต้โครงการ STAR สนับสนุนโดยสำนักบริหารวิจัย จุฬาลงกรณ์มหาวิทยาลัย</span>
+        <span class="en">Architectural Intelligence (A.I.) Research Group, Faculty of Architecture, Chulalongkorn University · An entry-level research group under the STAR programme, funded by the Office of Research Affairs, Chulalongkorn University.</span>
+      </div>
+      <div style="margin-left:auto;display:flex;flex-direction:column;gap:6px;font-size:13px">
+        <a href="https://www.arch.chula.ac.th/arch-cu/TH/researchlabs.html" target="_blank" rel="noopener"><span class="th">คณะสถาปัตยกรรมศาสตร์ · Research Labs ↗</span><span class="en">Faculty of Architecture · Research Labs ↗</span></a>
+        <a href="https://www.arch.arch.chula.ac.th/" target="_blank" rel="noopener"><span class="th">ภาควิชาสถาปัตยกรรมศาสตร์ ↗</span><span class="en">Department of Architecture ↗</span></a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showMetrics&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showNameOrigin&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+class Component extends DCLogic {
+  constructor(p){ super(p); this.rootRef = React.createRef(); }
+
+  applyFlags(){
+    const el = this.rootRef.current; if (!el) return;
+    let lang = 'th';
+    try { lang = localStorage.getItem('aicu-lang') || 'th'; } catch(e) {}
+    el.dataset.lang = lang;
+    el.dataset.metrics = (this.props.showMetrics ?? true) ? 'on' : 'off';
+    el.dataset.origin = (this.props.showNameOrigin ?? true) ? 'on' : 'off';
+  }
+
+  setLang = (lang) => {
+    const el = this.rootRef.current; if (!el) return;
+    el.dataset.lang = lang;
+    try { localStorage.setItem('aicu-lang', lang); } catch(e) {}
+  };
+
+  countUp(){
+    const el = this.rootRef.current; if (!el || !window.IntersectionObserver) return;
+    const nodes = el.querySelectorAll('[data-count]');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        io.unobserve(entry.target);
+        const node = entry.target;
+        const target = parseFloat(node.dataset.count);
+        const decimals = (node.dataset.count.split('.')[1] || '').length;
+        const start = performance.now(), dur = 1100;
+        const tick = (now) => {
+          const t = Math.min(1, (now - start) / dur);
+          const eased = 1 - Math.pow(1 - t, 3);
+          node.textContent = (target * eased).toFixed(decimals);
+          if (t < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.4 });
+    nodes.forEach(n => io.observe(n));
+  }
+
+  componentDidMount(){ this.applyFlags(); this.countUp(); }
+  componentDidUpdate(){ 
+    const el = this.rootRef.current; if (!el) return;
+    el.dataset.metrics = (this.props.showMetrics ?? true) ? 'on' : 'off';
+    el.dataset.origin = (this.props.showNameOrigin ?? true) ? 'on' : 'off';
+  }
+
+  renderVals(){
+    return {
+      rootRef: this.rootRef,
+      setTh: () => this.setLang('th'),
+      setEn: () => this.setLang('en')
+    };
+  }
+}
+</script>
+</body>
+</html>
